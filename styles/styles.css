@@ -692,19 +692,22 @@ input:focus {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 300px;
+        flex-direction: column;
+    gap: 24px;
+    min-width: min(100%, 300px);
     max-width: 600px;
 }
 
 .events-rcard {
-    background-color: #fefefe;
-    padding: 20px 25px;
-    border-left: 6px solid #ff6b6b;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(25, 25, 25, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background-color: #fefefe;
+    padding: clamp(20px, 3vw, 32px);
+    border-left: 4px solid #ff6b6b;
+    border-radius: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(25, 25, 25, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .events-rcard:hover {
@@ -2473,4 +2476,66 @@ html {
 
 .dark-mode .leftcard1 .text p {
     color: #ccc;
+}
+
+/*************************************/
+/****** RIGHT NEWS CARDS (PREMIUM) ***/
+/*************************************/
+.rcard-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.rcard-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b, #e04444);
+    box-shadow: 0 6px 16px rgba(224, 68, 68, 0.3);
+}
+
+.events-text1 h6 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e04444;
+}
+
+.events-text1 h4 {
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 1.3;
+    margin: 0 0 12px;
+    color: #1a1a1a;
+}
+
+.events-text1 p {
+    font-size: clamp(0.88rem, 1.5vw, 0.95rem);
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+.events-rcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(224, 68, 68, 0.18);
+}
+
+@media only screen and (max-width: 768px) {
+    .events-rightcards {
+        width: 100%;
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .events-rcard {
+        border-radius: 14px;
+    }
 }
